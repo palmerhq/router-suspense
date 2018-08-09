@@ -1,0 +1,27 @@
+{
+  "name": "router-suspense",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.m.js",
+  "source": "temp/index.js",
+  "scripts": {
+    "start": "NODE_ENV=development babel -w ./src --out-dir temp | microbundle watch"
+  },
+  "dependencies": {
+    "history": "^4.7.2",
+    "path-to-regexp": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "microbundle": "^0.6.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}
