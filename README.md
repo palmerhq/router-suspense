@@ -8,7 +8,35 @@ For demonstration purposes only. For now. :-)
 npm i router-suspense
 ```
 
-You will need to enable suspense. That means either building React yourself. Or, using this handy dandy starter we made.
+As of now, this is a very basic router that works in async-land. 
+
+## API
+
+The API is basically the core of React Router 4.
+
+
+### `<Router>`
+
+- `children: React.ReactNode`
+
+### `<Route>`
+
+- `render: ((props) => React.ReactNode)`
+- `path: string`
+- `exact: boolean = false`
+
+### `<Link>`
+
+- `to: string`
+
+### `withRouter(Comp: Component)`
+
+Same as RR4.
+
+
+## Playing with Suspense
+
+This router doesn't yet do anything with suspense, it's just suspense-friendly. If you want to play around, you'll need to enable suspense somehow. That means either building React yourself. Or, using this handy dandy starter we made.
 
 https://github.com/palmerhq/react-suspense-starter
 
