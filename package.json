@@ -1,11 +1,25 @@
 {
   "name": "router-suspense",
-  "version": "0.0.0",
+  "author": "Jared Palmer <jared@palmer.net>",
+  "repository": "palmerhq/router-suspense",
+  "keywords": [
+    "react",
+    "react-dom",
+    "suspense",
+    "router",
+    "react router",
+    "higher order component",
+    "hoc",
+    "render prop"
+  ],
   "license": "MIT",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.m.js",
   "source": "temp/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "NODE_ENV=development babel -w ./src --out-dir temp | microbundle watch",
     "build": "NODE_ENV=production babel ./src --out-dir temp && microbundle build && rm -rf ./temp",
