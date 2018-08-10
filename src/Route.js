@@ -5,7 +5,10 @@ import { deferredUpdates } from './deferredUpdates';
 
 class RouteImpl extends React.Component {
   state = {
-    match: matchPath(this.props.location.pathname, this.props.path),
+    match: matchPath(this.props.location.pathname, {
+      path: this.props.path,
+      exact: this.props.exact,
+    }),
   };
 
   componentDidUpdate(prevProps) {
@@ -15,7 +18,10 @@ class RouteImpl extends React.Component {
     ) {
       deferredUpdates(() => {
         this.setState({
-          match: matchPath(this.props.location.pathname, this.props.path),
+          match: matchPath(this.props.location.pathname, {
+            path: this.props.path,
+            exact: this.props.exact,
+          }),
         });
       });
     }
