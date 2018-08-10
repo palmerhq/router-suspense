@@ -13,13 +13,22 @@ export class Router extends React.Component {
   };
 
   componentDidMount() {
-    this.history.listen(() => {
+    this.unlisten = this.history.listen(() => {
       Promise.resolve().then(() =>
-        this.setState({
-          location: this.history.location,
+        deferredUpdates(() => {
+          if (!this.unmounted) {
+            this.setState({
+              location: this.history.location,
+            });
+          }
         })
       );
     });
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
+    this.unlisten();
   }
 
   render() {
