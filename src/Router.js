@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserHistory } from 'history';
 import { matchPath } from './matchPath';
 import { RouterContext } from './RouterContext';
+import { deferredUpdates } from './deferredUpdates';
 
 export class Router extends React.Component {
   history = createBrowserHistory();
@@ -13,9 +14,11 @@ export class Router extends React.Component {
 
   componentDidMount() {
     this.history.listen(() => {
-      this.setState({
-        location: this.history.location,
-      });
+      Promise.resolve().then(() =>
+        this.setState({
+          location: this.history.location,
+        })
+      );
     });
   }
 

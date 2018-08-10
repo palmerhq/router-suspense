@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from './withRouter';
 import { matchPath } from './matchPath';
+import { deferredUpdates } from './deferredUpdates';
 
 class RouteImpl extends React.Component {
   state = {
@@ -12,8 +13,10 @@ class RouteImpl extends React.Component {
       this.props.location.pathname !== prevProps.location.pathname ||
       this.props.path !== prevProps.path
     ) {
-      this.setState({
-        match: matchPath(this.props.location.pathname, this.props.path),
+      deferredUpdates(() => {
+        this.setState({
+          match: matchPath(this.props.location.pathname, this.props.path),
+        });
       });
     }
   }
@@ -30,8 +33,6 @@ class RouteImpl extends React.Component {
     } = this.props;
     const { match } = this.state;
     const props = { location, history, match };
-    console.log('match', match);
-    console.log('path', path);
     if (match !== null && match.isExact) {
       if (render) {
         return render(props);
