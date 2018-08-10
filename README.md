@@ -11,6 +11,14 @@ As of now, this is a very basic router that works in async-land.
 
 <img src="https://user-images.githubusercontent.com/4060187/43965292-e15935fe-9c8c-11e8-80f5-a369fdbf568d.gif" width="500" />
 
+
+## Playing with Suspense
+
+This router will work in React 15+. However, If you want to play around with suspense features, you'll need to enable suspense somehow. That means either building React yourself. Or, using this handy dandy starter we made.
+
+https://github.com/palmerhq/react-suspense-starter
+
+
 ## API
 
 The API is basically the core of React Router 4.
@@ -110,12 +118,6 @@ const BackButton = ({ history }) => (
 
 export default withRouter(BackButton)
 ```
-
-## Playing with Suspense
-
-This router will work in React 15+. However, If you want to play around with suspense features, you'll need to enable suspense somehow. That means either building React yourself. Or, using this handy dandy starter we made.
-
-https://github.com/palmerhq/react-suspense-starter
 
 ## Inspiration
 
