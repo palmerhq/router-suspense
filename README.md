@@ -126,7 +126,7 @@ A lot of this code is taken straight from React Router and React Training's Mini
 ## Authors
 
 - Jack Cross ([@crosscompile](https://twitter.com/crosscompile))
-- Jared Palmer ([@jaredpalmer](https://twitter.com/crosscompile))
+- Jared Palmer ([@jaredpalmer](https://twitter.com/jaredpalmer))
 
 
 Copyright © 2018 The Palmer Group.
